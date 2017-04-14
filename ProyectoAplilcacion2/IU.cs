@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace ProyectoAplicacion2
 {
     public partial class Form1 : Form
@@ -30,8 +30,19 @@ namespace ProyectoAplicacion2
             TextRutaArchivo.Enabled = true;
             TextRutaArchivo.Text = ofd.FileName;
             TextRutaArchivo.Enabled = false;
+            if (!File.Exists(ofd.FileName))
+            {
+                TextRutaArchivo.Text = "";
+                return;
+            }
 
-            new Resultados(new Servicio(ofd.FileName)).ShowDialog();
+            try
+            {
+                new Resultados(new Servicio(ofd.FileName)).ShowDialog();
+            }catch(Exception i)
+            {
+                MessageBox.Show("El Formato del archivo no es el correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnIngresoDatos_Click(object sender, EventArgs e)

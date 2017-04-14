@@ -9,3 +9,14 @@ C:\Users\Maynor\Desktop\ProyectoAplilcacion2\ProyectoAplilcacion2\obj\Debug\Proy
 C:\Users\Maynor\Desktop\ProyectoAplilcacion2\ProyectoAplilcacion2\obj\Debug\ProyectoAplilcacion2.pdb
 C:\Users\Maynor\Desktop\ProyectoAplilcacion2\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.Resultados.resources
 C:\Users\Maynor\Desktop\ProyectoAplilcacion2\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.IngresoDatos.resources
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\bin\Debug\ProyectoAplilcacion2.exe.config
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplilcacion2.exe
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplilcacion2.pdb
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\bin\Debug\ProyectoAplilcacion2.exe
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\bin\Debug\ProyectoAplilcacion2.pdb
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.csprojResolveAssemblyReference.cache
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.IngresoDatos.resources
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.Form1.resources
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplilcacion2.Properties.Resources.resources
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.Resultados.resources
+C:\Users\Maynor\Documents\GitHub\Transporte-Inteligente\ProyectoAplilcacion2\obj\Debug\ProyectoAplicacion2.csproj.GenerateResource.Cache
