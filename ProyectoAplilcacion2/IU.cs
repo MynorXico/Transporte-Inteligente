@@ -38,7 +38,7 @@ namespace ProyectoAplicacion2
 
             try
             {
-                new Resultados(new Servicio(ofd.FileName)).ShowDialog();
+                new Resultados(new Servicio(ofd.FileName, Metodo.Noreste), Metodo.Noreste).ShowDialog();
             }catch(Exception i)
             {
                 MessageBox.Show("El Formato del archivo no es el correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -47,6 +47,7 @@ namespace ProyectoAplicacion2
 
         private void btnIngresoDatos_Click(object sender, EventArgs e)
         {
+            Servicio s = null;
             int numeroFabricas, numeroProveedores;
             try
             {
@@ -94,8 +95,51 @@ namespace ProyectoAplicacion2
             {
                 Precios.Add(1);
             }
-            new Resultados(new Servicio(Fabricas, Proveedores, Tratos, Precios)).ShowDialog();
+            if (Noreste.Checked)
+            {
+                s = new Servicio(Fabricas, Proveedores, Tratos, Precios, Metodo.Noreste);
+                if(s.getSumaFabrica()==s.getSumaProveedor())
+                    new Resultados(s, Metodo.Noreste).ShowDialog();
+                else
+                    MessageBox.Show("La suma de solicitudes y entregas no coincide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                s = new Servicio(Fabricas, Proveedores, Tratos, Precios, Metodo.Vogel);
+                if (s.getSumaFabrica() == s.getSumaProveedor())
+                    new Resultados(s, Metodo.Vogel).ShowDialog();
+                else
+                    MessageBox.Show("La suma de solicitudes y entregas no coincide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            textBox1.Enabled = true;
+            textBox1.Text = ofd.FileName;
+            textBox1.Enabled = false;
+
+            if (!File.Exists(ofd.FileName))
+            {
+                TextRutaArchivo.Text = "";
+                return;
+            }
+
+            try
+            {
+                new Resultados(new Servicio(ofd.FileName, Metodo.Vogel), Metodo.Vogel).ShowDialog();
+            }
+            catch (Exception i)
+            {
+                MessageBox.Show("El Formato del archivo no es el correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

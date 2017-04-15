@@ -13,7 +13,7 @@ namespace ProyectoAplicacion2
     }
     public class Servicio
     {
-        int[,] Matriz;
+        double[,] Matriz;
         string[] Datos;
         List<Fabrica> Fabricas = new List<Fabrica>();
         List<Proveedor> Proveedores = new List<Proveedor>();
@@ -39,7 +39,7 @@ namespace ProyectoAplicacion2
 
         }
 
-        public Servicio(string RutaArchivo)
+        public Servicio(string RutaArchivo, Metodo m)
         {
             Datos = ManejoArchivos.LecturaArchivo(RutaArchivo);
             int LineaActual = 1;
@@ -69,26 +69,66 @@ namespace ProyectoAplicacion2
                     Tratos.Add(t);
                     LineaActual++;
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     break;
                 }
             }
+            if (m == Metodo.Noreste)
+            {
+                Matriz = Algoritmos.NorEste(Fabricas, Proveedores);
+                TablaResultado = Algoritmos.TablaResultadosNorEste(Matriz, Precios.ToArray());
+            }
 
-            Matriz = Algoritmos.NorEste(Fabricas, Proveedores);
+            else if (m == Metodo.Vogel)
+            {
+                Matriz = Algoritmos.Vogel(Fabricas, Proveedores, Precios);
+                TablaResultado = Algoritmos.TablaResultadosVogel(Matriz, Precios.ToArray());
 
-            TablaResultado = Algoritmos.TablaResultadosNorEste(Matriz, Precios.ToArray());
+            }
 
         }
 
-        public Servicio(List<Fabrica> fabricas, List<Proveedor> proveedores, List<Trato> tratos, List<double> precios)
+        public Servicio(List<Fabrica> fabricas, List<Proveedor> proveedores, List<Trato> tratos, List<double> precios, Metodo m)
         {
             Fabricas = fabricas;
             Proveedores = proveedores;
             Tratos = tratos;
             Precios = precios;
-            Matriz = Algoritmos.NorEste(Fabricas, Proveedores);
-            TablaResultado = Algoritmos.TablaResultadosNorEste(Matriz, Precios.ToArray());
+            if (m == Metodo.Noreste)
+            {
+                Matriz = Algoritmos.NorEste(Fabricas, Proveedores);
+                TablaResultado = Algoritmos.TablaResultadosNorEste(Matriz, Precios.ToArray());
+            }
+            else if (m == Metodo.Vogel)
+            {
+                Matriz = Algoritmos.Vogel(Fabricas, Proveedores, Precios);
+                TablaResultado = Algoritmos.TablaResultadosVogel(Matriz, Precios.ToArray());
+            }
+            
         }
+        public double getSumaFabrica()
+        {
+            double d = 0;
+            foreach(Fabrica f in Fabricas)
+            {
+                d += f.CantidadSolicitud;
+            }
+            return d;
+        }
+        public double getSumaProveedor()
+        {
+            double d = 0;
+            foreach (Proveedor p in Proveedores)
+            {
+                d += p.ElementosSolicitados;
+            }
+            return d;
+        }
+    }
+    public enum Metodo
+    {
+        Vogel,
+        Noreste
     }
 }

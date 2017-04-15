@@ -85,6 +85,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 258);
             this.Controls.Add(this.dgvResultados);
+            this.MaximumSize = new System.Drawing.Size(486, 297);
+            this.MinimumSize = new System.Drawing.Size(486, 297);
             this.Name = "Resultados";
             this.Text = "Resultados";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();

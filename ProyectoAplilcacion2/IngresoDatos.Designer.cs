@@ -88,6 +88,8 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.MaximumSize = new System.Drawing.Size(424, 174);
+            this.MinimumSize = new System.Drawing.Size(424, 174);
             this.Name = "IngresoDatos";
             this.Text = "Ingreso Datos";
             this.ResumeLayout(false);
